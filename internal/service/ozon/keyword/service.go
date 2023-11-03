@@ -13,3 +13,8 @@ func (s *Service) List() []Keyword {
 func (s *Service) Get(idx int) (*Keyword, error) {
     return &allEntities[idx], nil
 }
+
+func (s *Service) Delete(idx int) error {
+    allEntities = append(allEntities[:idx], allEntities[idx+1:]...)
+    return nil
+}
